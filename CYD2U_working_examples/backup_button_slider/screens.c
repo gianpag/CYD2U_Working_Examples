@@ -18,6 +18,11 @@ static void event_handler_slider_cb_main_obj0(lv_event_t *e) {
     lv_obj_t *slider = lv_event_get_target(e);
     int brightness = lv_slider_get_value(slider);
     set_brightness(brightness); // Update brightness state
+    if (brightness > 0) {
+        lv_obj_add_state(objects.obj0, LV_STATE_CHECKED); // Set the switch to "checked"
+    } else {
+        lv_obj_clear_state(objects.obj0, LV_STATE_CHECKED); // Clear the "checked" state if brightness is 0
+    }
 }
 
 static void event_handler_checked_cb_main_obj0(lv_event_t *e) {
