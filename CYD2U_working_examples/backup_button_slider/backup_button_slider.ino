@@ -124,14 +124,14 @@ void toggleLight() {
 
 void turnOnLight() {
   sendWebSocketCommand("turn_on");
-  lightOn = true;
-  set_light_state(true);
+  //lightOn = true;
+  //set_light_state(true);
 }
 
 void turnOffLight() {
   sendWebSocketCommand("turn_off");
-  lightOn = false;
-  set_light_state(false);
+  //lightOn = false;
+  //set_light_state(false);
 }
 
 
